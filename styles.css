@@ -2070,6 +2070,13 @@ body.light-mode .highlight-large {
     color: var(--color-text-title) !important;
 }
 
+body.light-mode .highlight-red {
+    background: linear-gradient(135deg, #0f172a 30%, var(--color-accent-cyan)) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    text-shadow: none !important;
+}
+
 body.light-mode .header-project-name {
     background: linear-gradient(135deg, #0f172a, var(--color-accent-cyan));
     -webkit-background-clip: text;
@@ -2095,6 +2102,19 @@ body.light-mode .agenda-node h3 {
 }
 body.light-mode .slider-display-card {
     background: rgba(255, 255, 255, 0.7);
+}
+body.light-mode .toggle-container {
+    background: #cbd5e1 !important;
+    border-color: #94a3b8 !important;
+}
+body.light-mode .toggle-btn {
+    color: #334155 !important;
+}
+body.light-mode .toggle-btn.active {
+    background: #ffffff !important;
+    color: var(--color-accent-cyan) !important;
+    border-color: rgba(2, 132, 199, 0.2) !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08) !important;
 }
 body.light-mode .flow-path {
     background: rgba(255, 255, 255, 0.7);
@@ -2142,7 +2162,8 @@ body.light-mode .mockup-input {
     color: #0f172a;
 }
 body.light-mode .visualizer-area {
-    background: rgba(241, 245, 249, 0.4);
+    background: #e2e8f0 !important;
+    border-color: #cbd5e1 !important;
 }
 body.light-mode .cyber-header {
     background: rgba(248, 250, 252, 0.85);
