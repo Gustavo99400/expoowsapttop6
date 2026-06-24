@@ -205,7 +205,9 @@
 
                     <div class="card glassmorphic alert-card">
                         <div class="card-header">
-                            <span class="icon-warning">⚠️</span>
+                            <span class="icon-warning">
+                                <svg class="svg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle; margin-right:5px;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0zM12 9v4M12 17h.01"></path></svg>
+                            </span>
                             <h3>A06:2025 – INSECURE DESIGN</h3>
                         </div>
                         <div class="card-body">
@@ -225,7 +227,9 @@
                         </div>
 
                         <div class="slider-display-card" id="slider-display">
-                            <div class="display-icon red-glow">📐</div>
+                            <div class="display-icon red-glow">
+                                <svg class="svg-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-3a1 1 0 0 0-1-1h-3a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h3a1 1 0 0 0 1-1V5a2 2 0 0 0-2-2z"></path><path d="M3 9h4M3 15h4M9 21v-4M15 21v-4"></path></svg>
+                            </div>
                             <h4 id="display-title">Diseño Inseguro (Falla de Diseño)</h4>
                             <p id="display-desc">Diseñar una caja fuerte de alta gama pero con la pared trasera hecha de cartón. Aunque la cerradura esté instalada perfectamente sin errores de código, el sistema es vulnerable por su propia concepción estructural.</p>
                             <div class="visual-indicator" id="display-visual">
@@ -247,19 +251,25 @@
                 
                 <div class="cards-triple-grid">
                     <div class="card-glow-border red-glow">
-                        <div class="grid-card-icon">🔍</div>
+                        <div class="grid-card-icon">
+                            <svg class="svg-icon" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle; margin-bottom:15px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        </div>
                         <h3>DIFÍCIL DETECCIÓN</h3>
                         <p>No se puede probar la seguridad en un diseño inexistente o deficiente. Las herramientas automáticas de análisis de código (SAST/DAST) rara vez detectan errores conceptuales o de lógica de negocio, haciendo que requiera revisiones de arquitectura humanas.</p>
                     </div>
 
                     <div class="card-glow-border blue-glow">
-                        <div class="grid-card-icon">⚡</div>
+                        <div class="grid-card-icon">
+                            <svg class="svg-icon" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle; margin-bottom:15px;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                        </div>
                         <h3>PLANIFICACIÓN DESDE EL INICIO</h3>
                         <p>La seguridad no es una característica que se añade al final del desarrollo. Debe planificarse desde la especificación de requisitos. Corregir un error de diseño en producción puede costar hasta 100 veces más que resolverlo en la etapa de diseño.</p>
                     </div>
 
                     <div class="card-glow-border green-glow">
-                        <div class="grid-card-icon">🌐</div>
+                        <div class="grid-card-icon">
+                            <svg class="svg-icon" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle; margin-bottom:15px;"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                        </div>
                         <h3>IMPACTO EN TODO EL SISTEMA</h3>
                         <p>Las fallas de diseño comprometen la base del software. Si la arquitectura no define límites de confianza y control claros, los parches a nivel de código solo ocultarán temporalmente una vulnerabilidad estructural mucho mayor.</p>
                     </div>
@@ -491,8 +501,14 @@
 
                         <!-- Botones de Control del Simulador -->
                         <div class="panel-footer">
-                            <button id="btn-simulate-attack" class="sim-btn btn-attack">💥 Simular Ataque</button>
-                            <button id="btn-apply-fix" class="sim-btn btn-fix">🛡️ Aplicar Diseño Seguro</button>
+                            <button id="btn-simulate-attack" class="sim-btn btn-attack">
+                                <svg class="btn-svg-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle; margin-right:5px;"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                                Simular Ataque
+                            </button>
+                            <button id="btn-apply-fix" class="sim-btn btn-fix">
+                                <svg class="btn-svg-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle; margin-right:5px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                                Aplicar Diseño Seguro
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -575,7 +591,9 @@
 
                     <div class="matrix-details" id="matrix-display-panel">
                         <div class="matrix-detail-card">
-                            <div class="detail-icon-box">🛡️</div>
+                            <div class="detail-icon-box">
+                                <svg class="svg-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            </div>
                             <h3 id="tactic-title">Modelado de Amenazas</h3>
                             
                             <div class="detail-section-row">
@@ -608,7 +626,9 @@
                     <!-- Medida 1 -->
                     <div class="medida-item glassmorphic">
                         <div class="medida-header">
-                            <span class="medida-icon">🎨</span>
+                            <span class="medida-icon">
+                                <svg class="svg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle;"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                            </span>
                             <h3>1. Seguridad por Diseño (SBD)</h3>
                         </div>
                         <p>Incorporar expertos en seguridad y requisitos de seguridad desde la fase inicial de definición del proyecto.</p>
@@ -617,7 +637,9 @@
                     <!-- Medida 2 -->
                     <div class="medida-item glassmorphic">
                         <div class="medida-header">
-                            <span class="medida-icon">🔑</span>
+                            <span class="medida-icon">
+                                <svg class="svg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle;"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3-3.5 3.5z"></path></svg>
+                            </span>
                             <h3>2. Mínimo Privilegio</h3>
                             <div class="badge badge-tech">Principio</div>
                         </div>
@@ -627,7 +649,9 @@
                     <!-- Medida 3 -->
                     <div class="medida-item glassmorphic">
                         <div class="medida-header">
-                            <span class="medida-icon">🗺️</span>
+                            <span class="medida-icon">
+                                <svg class="svg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle;"><circle cx="12" cy="12" r="10"></circle><line x1="22" y1="12" x2="18" y2="12"></line><line x1="6" y1="12" x2="2" y2="12"></line><line x1="12" y1="6" x2="12" y2="2"></line><line x1="12" y1="22" x2="12" y2="18"></line></svg>
+                            </span>
                             <h3>3. Modelado de Amenazas Continuo</h3>
                         </div>
                         <p>Ejecutar análisis de amenazas sistemáticos para todos los flujos de negocio críticos antes de su desarrollo.</p>
@@ -636,7 +660,9 @@
                     <!-- Medida 4 -->
                     <div class="medida-item glassmorphic">
                         <div class="medida-header">
-                            <span class="medida-icon">🧅</span>
+                            <span class="medida-icon">
+                                <svg class="svg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle;"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                            </span>
                             <h3>4. Defensa en Profundidad</h3>
                         </div>
                         <p>Implementar múltiples capas de control alrededor de los activos críticos en lugar de confiar en una sola barrera perimetral.</p>
@@ -645,7 +671,9 @@
                     <!-- Medida 5 -->
                     <div class="medida-item glassmorphic">
                         <div class="medida-header">
-                            <span class="medida-icon">✅</span>
+                            <span class="medida-icon">
+                                <svg class="svg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            </span>
                             <h3>5. Validar en Servidor</h3>
                             <div class="badge badge-alert">Urgente</div>
                         </div>
@@ -655,7 +683,9 @@
                     <!-- Medida 6 -->
                     <div class="medida-item glassmorphic">
                         <div class="medida-header">
-                            <span class="medida-icon">📐</span>
+                            <span class="medida-icon">
+                                <svg class="svg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line><line x1="15" y1="3" x2="15" y2="21"></line><line x1="3" y1="9" x2="21" y2="9"></line><line x1="3" y1="15" x2="21" y2="15"></line></svg>
+                            </span>
                             <h3>6. Auditorías de Arquitectura</h3>
                         </div>
                         <p>Realizar revisiones periódicas de los patrones de diseño del software para garantizar que se adaptan a las nuevas amenazas.</p>
@@ -674,10 +704,12 @@
                     <div class="glow-separator"></div>
                     <div class="cierre-actions">
                         <button class="cierre-btn" onclick="document.getElementById('sec-portada').scrollIntoView({behavior: 'smooth'})">
-                            🔄 Reiniciar Presentación
+                            <svg class="btn-svg-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle; margin-right:5px;"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path></svg>
+                            Reiniciar Presentación
                         </button>
                         <a href="https://owasp.org/Top10/es/A06_2021-Insecure_Design/" target="_blank" class="cierre-link">
-                            📚 Documentación de OWASP
+                            <svg class="btn-svg-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle; margin-right:5px;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                            Documentación de OWASP
                         </a>
                     </div>
                 </div>

@@ -124,7 +124,7 @@ function initDesignDifferenceSlider() {
         btnBug.classList.remove('active');
         
         displayIcon.className = 'display-icon red-glow';
-        displayIcon.textContent = '📐';
+        displayIcon.innerHTML = '<svg class="svg-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-3a1 1 0 0 0-1-1h-3a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h3a1 1 0 0 0 1-1V5a2 2 0 0 0-2-2z"></path><path d="M3 9h4M3 15h4M9 21v-4M15 21v-4"></path></svg>';
         displayTitle.textContent = 'Diseño Inseguro (Falla de Diseño)';
         displayDesc.textContent = 'Diseñar una caja fuerte de alta gama pero con la pared trasera hecha de cartón. Aunque la cerradura esté instalada perfectamente sin errores de código, el sistema es vulnerable por su propia concepción estructural.';
         displayVisual.innerHTML = `
@@ -140,7 +140,7 @@ function initDesignDifferenceSlider() {
         btnFlaw.classList.remove('active');
 
         displayIcon.className = 'display-icon yellow-glow';
-        displayIcon.textContent = '⚙️';
+        displayIcon.innerHTML = '<svg class="svg-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>';
         displayTitle.textContent = 'Error de Codificación (Bug de Implementación)';
         displayDesc.textContent = 'Diseñar una caja fuerte blindada impenetrable de acero en todos sus lados, pero el fabricante olvida soldar la cerradura o deja la clave por defecto de fábrica. El diseño era robusto, pero falló la implementación.';
         displayVisual.innerHTML = `
@@ -200,11 +200,11 @@ const scenariosData = {
             "[ACCESS] Login exitoso para el rol ADMINISTRADOR. Base de datos expuesta."
         ],
         attackHtml: `
-            <div class="mockup-title" style="color:var(--color-accent-red)">⚠️ ACCESO OTORGADO</div>
+            <div class="mockup-title" style="color:var(--color-accent-red)">ACCESO OTORGADO</div>
             <div style="background:rgba(255,51,102,0.1); border:1px solid var(--color-accent-red); border-radius:6px; padding:15px; text-align:center;">
                 <p style="font-size:0.8rem; color:#fff; font-weight:bold; margin-bottom:5px;">SESIÓN INICIADA</p>
                 <p style="font-size:0.75rem; color:var(--color-text-muted);">Bienvenido: Administrator</p>
-                <div style="font-size:1.5rem; margin-top:8px;">🔓</div>
+                <div style="margin-top:8px;"><svg class="svg-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="var(--color-accent-red)" stroke-width="2" style="display:inline-block;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 9.9-1"></path></svg></div>
             </div>
             <p style="font-size:0.68rem; color:var(--color-accent-red); text-align:center;">Vulnerabilidad: Las preguntas estáticas son fáciles de adivinar.</p>
         `,
@@ -215,7 +215,7 @@ const scenariosData = {
             "[SAFE] Ataque de adivinación bloqueado. El atacante carece del dispositivo físico registrado."
         ],
         fixHtml: `
-            <div class="mockup-title" style="color:var(--color-accent-green)">🛡️ SEGURIDAD ACTIVA</div>
+            <div class="mockup-title" style="color:var(--color-accent-green)">SEGURIDAD ACTIVA</div>
             <div style="background:rgba(0,255,136,0.05); border:1px solid var(--color-accent-green); border-radius:6px; padding:15px; display:flex; flex-direction:column; gap:10px;">
                 <p style="font-size:0.75rem; color:#fff; text-align:center;">Se requiere Token MFA de 6 dígitos</p>
                 <input type="text" class="mockup-input" style="text-align:center; font-family:var(--font-code); font-size:1.1rem; letter-spacing:4px;" value="------" readonly>
@@ -229,9 +229,9 @@ const scenariosData = {
         initialHtml: `
             <div class="mockup-title">Proceso de Compra</div>
             <div style="display:flex; justify-content:space-around; font-size:0.65rem; color:var(--color-text-muted); border-bottom:1px solid #1e293b; padding-bottom:8px; margin-bottom:10px;">
-                <span>🛒 1. Carrito</span>
-                <span style="color:#ffd000; font-weight:bold;">💳 2. Pago</span>
-                <span>📦 3. Despacho</span>
+                <span>1. Carrito</span>
+                <span style="color:#ffd000; font-weight:bold;">2. Pago</span>
+                <span>3. Despacho</span>
             </div>
             <div style="background:#1e293b; padding:10px; border-radius:4px; font-size:0.75rem;">
                 <p>Artículo: Laptop Pro 15"</p>
@@ -251,11 +251,11 @@ const scenariosData = {
             "[COMPROMISED] ¡El servidor aceptó la orden! Falta de validación del estado de pago en backend. Orden enviada a despacho sin abonar $1,250.00."
         ],
         attackHtml: `
-            <div class="mockup-title" style="color:var(--color-accent-red)">⚠️ PROCESO INFECTADO</div>
+            <div class="mockup-title" style="color:var(--color-accent-red)">PROCESO INFECTADO</div>
             <div style="background:rgba(255,51,102,0.1); border:1px solid var(--color-accent-red); border-radius:6px; padding:12px; text-align:center;">
                 <p style="font-size:0.8rem; color:#fff; font-weight:bold;">ORDEN PROCESADA</p>
                 <p style="font-size:0.7rem; color:var(--color-accent-green); margin-top:5px;">Estado: Despachando sin pago recibido</p>
-                <div style="font-size:1.3rem; margin-top:5px;">📦✈️</div>
+                <div style="margin-top:8px;"><svg class="svg-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="var(--color-accent-red)" stroke-width="2" style="display:inline-block;"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></div>
             </div>
             <p style="font-size:0.68rem; color:var(--color-accent-red); text-align:center;">Vulnerabilidad: Confiar en parámetros de flujo manipulables en cliente.</p>
         `,
@@ -266,11 +266,11 @@ const scenariosData = {
             "[SAFE] Intento de bypass bloqueado. Redirigiendo a página de error 403."
         ],
         fixHtml: `
-            <div class="mockup-title" style="color:var(--color-accent-green)">🛡️ SEGURIDAD ACTIVA</div>
+            <div class="mockup-title" style="color:var(--color-accent-green)">SEGURIDAD ACTIVA</div>
             <div style="background:rgba(0,255,136,0.05); border:1px solid var(--color-accent-green); border-radius:6px; padding:15px; text-align:center;">
                 <p style="font-size:0.8rem; color:#f43f5e; font-weight:bold; margin-bottom:5px;">ERROR 403: ACCESO DENEGADO</p>
                 <p style="font-size:0.72rem; color:var(--color-text-muted);">La orden #9914 no ha completado el pago de manera segura. Acción bloqueada en el servidor.</p>
-                <div style="font-size:1.5rem; margin-top:8px;">🔒</div>
+                <div style="margin-top:8px;"><svg class="svg-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="var(--color-accent-green)" stroke-width="2" style="display:inline-block;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></div>
             </div>
         `
     },
@@ -302,7 +302,7 @@ const scenariosData = {
             "[COMPROMISED] Cuenta bancaria vaciada. Retirados $200,000.00 en 4 segundos sin alertas de velocidad de API ni controles anti-fraude corporativos."
         ],
         attackHtml: `
-            <div class="mockup-title" style="color:var(--color-accent-red)">⚠️ RETIRO MASIVO EXITOSO</div>
+            <div class="mockup-title" style="color:var(--color-accent-red)">RETIRO MASIVO EXITOSO</div>
             <div style="background:rgba(255,51,102,0.1); border:1px solid var(--color-accent-red); border-radius:6px; padding:15px; text-align:center;">
                 <p style="font-size:0.8rem; color:#fff; font-weight:bold;">CUENTA DEBÍTADA</p>
                 <p style="font-size:1.1rem; color:var(--color-accent-red); font-weight:bold; margin-top:5px;">Total Retirado: -$200,000.00</p>
@@ -317,11 +317,11 @@ const scenariosData = {
             "[SAFE] Cuenta bancaria protegida contra automatización."
         ],
         fixHtml: `
-            <div class="mockup-title" style="color:var(--color-accent-green)">🛡️ SEGURIDAD ACTIVA</div>
+            <div class="mockup-title" style="color:var(--color-accent-green)">SEGURIDAD ACTIVA</div>
             <div style="background:rgba(0,255,136,0.05); border:1px solid var(--color-accent-green); border-radius:6px; padding:15px; text-align:center;">
                 <p style="font-size:0.8rem; color:#ffd000; font-weight:bold; margin-bottom:5px;">TRANSACCIÓN SUSPENDIDA</p>
                 <p style="font-size:0.7rem; color:var(--color-text-muted);">Bloqueo preventivo de seguridad: Se ha superado el límite permitido de transacciones por minuto.</p>
-                <div style="font-size:1.3rem; margin-top:8px;">🚨</div>
+                <div style="margin-top:8px;"><svg class="svg-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="var(--color-accent-yellow)" stroke-width="2" style="display:inline-block;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0zM12 9v4M12 17h.01"></path></svg></div>
             </div>
         `
     },
@@ -349,7 +349,7 @@ const scenariosData = {
             "[COMPROMISED] ¡Acceso Total! El servidor devolvió el panel de administración completo porque la validación de acceso solo se hacía ocultando el botón en el frontend."
         ],
         attackHtml: `
-            <div class="mockup-title" style="color:var(--color-accent-red)">⚠️ CONSOLA ADMIN ABIERTA</div>
+            <div class="mockup-title" style="color:var(--color-accent-red)">CONSOLA ADMIN ABIERTA</div>
             <div style="background:rgba(255,51,102,0.1); border:1px solid var(--color-accent-red); border-radius:6px; padding:10px; font-family:var(--font-code); font-size:0.7rem; display:flex; flex-direction:column; gap:4px;">
                 <p style="color:#fff; font-weight:bold; text-align:center; margin-bottom:5px;">ADMIN CONTROL PANEL</p>
                 <p>▶ [Borrar Base Datos]</p>
@@ -365,11 +365,11 @@ const scenariosData = {
             "[SAFE] Panel administrativo inaccesible para usuarios comunes."
         ],
         fixHtml: `
-            <div class="mockup-title" style="color:var(--color-accent-green)">🛡️ SEGURIDAD ACTIVA</div>
+            <div class="mockup-title" style="color:var(--color-accent-green)">SEGURIDAD ACTIVA</div>
             <div style="background:rgba(0,255,136,0.05); border:1px solid var(--color-accent-green); border-radius:6px; padding:15px; text-align:center;">
                 <p style="font-size:0.8rem; color:#ef4444; font-weight:bold; margin-bottom:5px;">HTTP ERROR 403 FORBIDDEN</p>
                 <p style="font-size:0.7rem; color:var(--color-text-muted);">No posee privilegios para visualizar el recurso solicitado. Evento reportado al log de auditoría.</p>
-                <div style="font-size:1.3rem; margin-top:8px;">⛔</div>
+                <div style="margin-top:8px;"><svg class="svg-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="var(--color-accent-red)" stroke-width="2" style="display:inline-block;"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg></div>
             </div>
         `
     }

@@ -1998,3 +1998,28 @@ body {
     90% { transform: translate(-2px, -1px); }
 }
 
+/* Estilos de Iconos Vectoriales */
+.svg-icon {
+    display: inline-block;
+    stroke: currentColor;
+    fill: none;
+    vertical-align: middle;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.svg-icon:hover {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 5px currentColor);
+}
+
+.btn-svg-icon {
+    display: inline-block;
+    stroke: currentColor;
+    fill: none;
+    vertical-align: middle;
+    margin-right: 5px;
+    position: relative;
+    top: -1px;
+}
+
+
