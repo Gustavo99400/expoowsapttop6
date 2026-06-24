@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OWASP Top 10: A06:2025 – Insecure Design (Diseño Inseguro)</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Grid Overlay Background -->
+    <div class="cyber-grid"></div>
+
+    <!-- Navigation Sidebar (Scroll Spy) -->
+    <nav class="nav-sidebar" id="sidebar">
+        <div class="nav-dot-container active" data-section="sec-portada">
+            <span class="dot-tooltip">Portada</span>
+            <div class="nav-dot"></div>
+        </div>
+        <div class="nav-dot-container" data-section="sec-agenda">
+            <span class="dot-tooltip">Agenda / Índice</span>
+            <div class="nav-dot"></div>
+        </div>
+        <div class="nav-dot-container" data-section="sec-owasp-a06">
+            <span class="dot-tooltip">¿Qué es OWASP y A06?</span>
+            <div class="nav-dot"></div>
+        </div>
+        <div class="nav-dot-container" data-section="sec-importancia">
+            <span class="dot-tooltip">Importancia</span>
+            <div class="nav-dot"></div>
+        </div>
+        <div class="nav-dot-container" data-section="sec-que-es">
+            <span class="dot-tooltip">¿Qué es Diseño Inseguro?</span>
+            <div class="nav-dot"></div>
+        </div>
+        <div class="nav-dot-container" data-section="sec-causas">
+            <span class="dot-tooltip">Causas Principales</span>
+            <div class="nav-dot"></div>
+        </div>
+        <div class="nav-dot-container" data-section="sec-ejemplos">
+            <span class="dot-tooltip">Ejemplos Reales</span>
+            <div class="nav-dot"></div>
+        </div>
+        <div class="nav-dot-container" data-section="sec-consecuencias">
+            <span class="dot-tooltip">Consecuencias</span>
+            <div class="nav-dot"></div>
+        </div>
+        <div class="nav-dot-container" data-section="sec-identificar">
+            <span class="dot-tooltip">Cómo Identificar</span>
+            <div class="nav-dot"></div>
+        </div>
+        <div class="nav-dot-container" data-section="sec-medidas">
+            <span class="dot-tooltip">Prevención y Buenas Prácticas</span>
+            <div class="nav-dot"></div>
+        </div>
+        <div class="nav-dot-container" data-section="sec-gracias">
+            <span class="dot-tooltip">Cierre</span>
+            <div class="nav-dot"></div>
+        </div>
+    </nav>
+
+    <!-- Header status bar (futuristic cyber dashboard style) -->
+    <header class="cyber-header">
+        <div class="header-left">
+            <span class="badge badge-pulse">SECURE ENVIRONMENT</span>
+            <span class="header-project-name">OWASP TOP 10: A06:2025</span>
+        </div>
+        <div class="header-right">
+            <span class="terminal-clock" id="live-clock">15:22:00</span>
+            <span class="badge badge-outline">OP: SYSTEM_ACTIVE</span>
+        </div>
+    </header>
+
+    <!-- Presentation Container with Snap Scroll -->
+    <main class="presentation-container">
+
+        <!-- 1. PORTADA -->
+        <section id="sec-portada" class="slide-section active-slide">
+            <div class="slide-content central-layout">
+                <div class="portada-badge">OWASP TOP 10 VULNERABILITY</div>
+                <h1 class="main-title">A06:2025<br><span class="highlight-red">INSECURE DESIGN</span></h1>
+                <p class="main-subtitle">(DISEÑO INSEGURO)</p>
+                <div class="glow-separator"></div>
+                <div class="alumnos-container">
+                    <p class="alumnos-title">EQUIPO DE ANALISTAS AUTORIZADOS</p>
+                    <div class="alumnos-grid">
+                        <div class="alumno-card">
+                            <div class="alumno-status"></div>
+                            <p class="alumno-name">Mares Graos Frederick D.</p>
+                            <p class="alumno-role">Analista de Seguridad</p>
+                        </div>
+                        <div class="alumno-card">
+                            <div class="alumno-status"></div>
+                            <p class="alumno-name">Flores Vera Gustavo A.</p>
+                            <p class="alumno-role">Arquitecto de Software</p>
+                        </div>
+                        <div class="alumno-card">
+                            <div class="alumno-status"></div>
+                            <p class="alumno-name">Saya Ramos Arnold D.</p>
+                            <p class="alumno-role">Ingeniero DevSecOps</p>
+                        </div>
+                        <div class="alumno-card">
+                            <div class="alumno-status"></div>
+                            <p class="alumno-name">Ortiz Rosas Joshua D.</p>
+                            <p class="alumno-role">Auditor de Sistemas</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll-prompt" onclick="document.getElementById('sec-agenda').scrollIntoView({behavior: 'smooth'})">
+                    <span>DESPLAZAR PARA INICIAR</span>
+                    <div class="scroll-arrow"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. AGENDA / ÍNDICE -->
+        <section id="sec-agenda" class="slide-section">
+            <div class="slide-content index-layout">
+                <h2 class="section-title"><span class="number-tag">01</span> AGENDA <span class="title-detail">// CONTENIDOS DEL PROYECTO</span></h2>
+                <div class="agenda-container">
+                    <div class="agenda-map">
+                        <div class="map-connection-line"></div>
+                        <div class="map-nodes-grid">
+                            <div class="agenda-node" data-target="sec-owasp-a06">
+                                <div class="node-dot">1</div>
+                                <div class="node-content">
+                                    <h3>¿Qué es OWASP y A06?</h3>
+                                    <p>Conceptos clave e introducción al riesgo.</p>
+                                </div>
+                            </div>
+                            <div class="agenda-node" data-target="sec-importancia">
+                                <div class="node-dot">2</div>
+                                <div class="node-content">
+                                    <h3>Importancia del Problema</h3>
+                                    <p>Por qué es un riesgo crítico sistémico.</p>
+                                </div>
+                            </div>
+                            <div class="agenda-node" data-target="sec-que-es">
+                                <div class="node-dot">3</div>
+                                <div class="node-content">
+                                    <h3>¿Qué es Diseño Inseguro?</h3>
+                                    <p>Definición formal e implicancias.</p>
+                                </div>
+                            </div>
+                            <div class="agenda-node" data-target="sec-causas">
+                                <div class="node-dot">4</div>
+                                <div class="node-content">
+                                    <h3>Causas Principales</h3>
+                                    <p>Factores que originan esta falla.</p>
+                                </div>
+                            </div>
+                            <div class="agenda-node" data-target="sec-ejemplos">
+                                <div class="node-dot">5</div>
+                                <div class="node-content">
+                                    <h3>Ejemplos Reales</h3>
+                                    <p>Simulador interactivo de ataques.</p>
+                                </div>
+                            </div>
+                            <div class="agenda-node" data-target="sec-consecuencias">
+                                <div class="node-dot">6</div>
+                                <div class="node-content">
+                                    <h3>Consecuencias e Impacto</h3>
+                                    <p>Daños organizacionales y financieros.</p>
+                                </div>
+                            </div>
+                            <div class="agenda-node" data-target="sec-identificar">
+                                <div class="node-dot">7</div>
+                                <div class="node-content">
+                                    <h3>Cómo Identificar</h3>
+                                    <p>Metodologías y análisis de riesgo.</p>
+                                </div>
+                            </div>
+                            <div class="agenda-node" data-target="sec-medidas">
+                                <div class="node-dot">8</div>
+                                <div class="node-content">
+                                    <h3>Prevención y Buenas Prácticas</h3>
+                                    <p>Medidas de defensa en profundidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. ¿QUÉ ES OWASP Y QUÉ ES A06? -->
+        <section id="sec-owasp-a06" class="slide-section">
+            <div class="slide-content split-layout">
+                <div class="layout-left">
+                    <h2 class="section-title"><span class="number-tag">02</span> ¿QUÉ ES OWASP Y A06?</h2>
+                    
+                    <div class="card glassmorphic">
+                        <div class="card-header">
+                            <span class="icon-terminal">&gt;_</span>
+                            <h3>OWASP TOP 10</h3>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>OWASP (Open Web Application Security Project)</strong> es una fundación global sin fines de lucro enfocada en mejorar la seguridad del software. Su documento de referencia, el <strong>Top 10</strong>, representa el consenso general sobre los riesgos de seguridad más críticos en las aplicaciones web.</p>
+                        </div>
+                    </div>
+
+                    <div class="card glassmorphic alert-card">
+                        <div class="card-header">
+                            <span class="icon-warning">⚠️</span>
+                            <h3>A06:2025 – INSECURE DESIGN</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Incorporado para representar los riesgos relacionados con <strong>fallas en el diseño y la arquitectura</strong>. Se centra en la necesidad de incorporar el modelado de amenazas, patrones de diseño seguros y arquitecturas de referencia robustas.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="layout-right central-flex">
+                    <div class="interactive-slider-box glassmorphic">
+                        <h3>Diferencia Crítica de Arquitectura</h3>
+                        <p class="helper-text">Cambia el interruptor para comprender la distinción fundamental:</p>
+                        
+                        <div class="toggle-container">
+                            <button id="btn-flaw" class="toggle-btn active">Falla de Diseño (A06)</button>
+                            <button id="btn-bug" class="toggle-btn">Bug de Implementación (Otros)</button>
+                        </div>
+
+                        <div class="slider-display-card" id="slider-display">
+                            <div class="display-icon red-glow">📐</div>
+                            <h4 id="display-title">Diseño Inseguro (Falla de Diseño)</h4>
+                            <p id="display-desc">Diseñar una caja fuerte de alta gama pero con la pared trasera hecha de cartón. Aunque la cerradura esté instalada perfectamente sin errores de código, el sistema es vulnerable por su propia concepción estructural.</p>
+                            <div class="visual-indicator" id="display-visual">
+                                <div class="box-safe design-flaw-view">
+                                    <div class="safe-door">PUERTA DE ACERO (OK)</div>
+                                    <div class="safe-wall-back flawed">PARED DE CARTÓN (FALLA)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. IMPORTANCIA DEL PROBLEMA -->
+        <section id="sec-importancia" class="slide-section">
+            <div class="slide-content vertical-layout">
+                <h2 class="section-title"><span class="number-tag">03</span> IMPORTANCIA DEL PROBLEMA <span class="title-detail">// ¿POR QUÉ ES CRÍTICO?</span></h2>
+                
+                <div class="cards-triple-grid">
+                    <div class="card-glow-border red-glow">
+                        <div class="grid-card-icon">🔍</div>
+                        <h3>DIFÍCIL DETECCIÓN</h3>
+                        <p>No se puede probar la seguridad en un diseño inexistente o deficiente. Las herramientas automáticas de análisis de código (SAST/DAST) rara vez detectan errores conceptuales o de lógica de negocio, haciendo que requiera revisiones de arquitectura humanas.</p>
+                    </div>
+
+                    <div class="card-glow-border blue-glow">
+                        <div class="grid-card-icon">⚡</div>
+                        <h3>PLANIFICACIÓN DESDE EL INICIO</h3>
+                        <p>La seguridad no es una característica que se añade al final del desarrollo. Debe planificarse desde la especificación de requisitos. Corregir un error de diseño en producción puede costar hasta 100 veces más que resolverlo en la etapa de diseño.</p>
+                    </div>
+
+                    <div class="card-glow-border green-glow">
+                        <div class="grid-card-icon">🌐</div>
+                        <h3>IMPACTO EN TODO EL SISTEMA</h3>
+                        <p>Las fallas de diseño comprometen la base del software. Si la arquitectura no define límites de confianza y control claros, los parches a nivel de código solo ocultarán temporalmente una vulnerabilidad estructural mucho mayor.</p>
+                    </div>
+                </div>
+
+                <div class="quote-callout glassmorphic">
+                    <p>"Un diseño seguro puede resistir errores de implementación inevitables, pero un diseño inseguro no se puede corregir con una codificación perfecta."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. ¿QUÉ ES EL DISEÑO INSEGURO? -->
+        <section id="sec-que-es" class="slide-section">
+            <div class="slide-content split-layout">
+                <div class="layout-left">
+                    <h2 class="section-title"><span class="number-tag">04</span> ¿QUÉ ES EL DISEÑO INSEGURO?</h2>
+                    <div class="definition-block">
+                        <p class="highlight-large">
+                            Es una vulnerabilidad que surge cuando una aplicación o sistema es concebido, diseñado o estructurado sin los controles de seguridad necesarios para proteger sus recursos y flujos de negocio.
+                        </p>
+                        <p>
+                            No se trata de líneas de código mal escritas (como no sanitizar una entrada); se trata de <strong>procesos de negocio inherentemente vulnerables</strong>, falta de segregación de privilegios, o ausencia de límites técnicos en la lógica del sistema.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="layout-right central-flex">
+                    <div class="flowchart-box glassmorphic">
+                        <h3>Ciclo de Diseño: Seguro vs Inseguro</h3>
+                        
+                        <div class="comparison-flow">
+                            <div class="flow-path path-bad">
+                                <div class="flow-header header-red">Proceso Inseguro (Tradicional)</div>
+                                <div class="flow-steps">
+                                    <div class="step">1. Requisitos de Negocio <span class="flow-arrow">➔</span></div>
+                                    <div class="step text-warn">2. Diseño Rápido (Seguridad Omitida) <span class="flow-arrow">➔</span></div>
+                                    <div class="step">3. Codificación sin Guías <span class="flow-arrow">➔</span></div>
+                                    <div class="step text-danger">4. Despliegue Vulnerable</div>
+                                </div>
+                            </div>
+
+                            <div class="flow-path path-good">
+                                <div class="flow-header header-green">Proceso Seguro (SSDLC)</div>
+                                <div class="flow-steps">
+                                    <div class="step">1. Requisitos con Seguridad <span class="flow-arrow">➔</span></div>
+                                    <div class="step text-success">2. Modelado de Amenazas <span class="flow-arrow">➔</span></div>
+                                    <div class="step">3. Codificación Segura <span class="flow-arrow">➔</span></div>
+                                    <div class="step text-success">4. Despliegue Validado</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. CAUSAS PRINCIPALES -->
+        <section id="sec-causas" class="slide-section">
+            <div class="slide-content vertical-layout">
+                <h2 class="section-title"><span class="number-tag">05</span> CAUSAS PRINCIPALES <span class="title-detail">// ¿CÓMO SE ORIGINA?</span></h2>
+                
+                <div class="causas-grid">
+                    <!-- Tarjeta 1 -->
+                    <div class="causa-card" data-cause="1">
+                        <div class="causa-front glassmorphic">
+                            <div class="causa-num">01</div>
+                            <h3>Falta de Requisitos de Seguridad</h3>
+                            <p>No se especifican las necesidades de protección al iniciar el proyecto.</p>
+                            <span class="click-details">Haga clic para ver más</span>
+                        </div>
+                        <div class="causa-back glassmorphic">
+                            <h3>Falta de Requisitos</h3>
+                            <p class="desc-detail">El desarrollo comienza únicamente basándose en la funcionalidad deseada por el cliente. No se definen políticas de contraseñas, encriptación, retención de datos o niveles de auditoría indispensables.</p>
+                            <span class="click-back">Volver</span>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 2 -->
+                    <div class="causa-card" data-cause="2">
+                        <div class="causa-front glassmorphic">
+                            <div class="causa-num">02</div>
+                            <h3>Ausencia de Modelado de Amenazas</h3>
+                            <p>No se analizan los vectores de ataque antes del desarrollo.</p>
+                            <span class="click-details">Haga clic para ver más</span>
+                        </div>
+                        <div class="causa-back glassmorphic">
+                            <h3>Ausencia de Modelado</h3>
+                            <p class="desc-detail">No se realiza una sesión de STRIDE u otra metodología para descubrir quién podría atacar el sistema y cómo. Como consecuencia, no se diseñan contramedidas para mitigar esos riesgos potenciales.</p>
+                            <span class="click-back">Volver</span>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 3 -->
+                    <div class="causa-card" data-cause="3">
+                        <div class="causa-front glassmorphic">
+                            <div class="causa-num">03</div>
+                            <h3>Funcionalidad sobre Seguridad</h3>
+                            <p>Se prioriza la rapidez de entrega del software sobre los controles.</p>
+                            <span class="click-details">Haga clic para ver más</span>
+                        </div>
+                        <div class="causa-back glassmorphic">
+                            <h3>Funcionalidad Primero</h3>
+                            <p class="desc-detail">La presión por lanzar características al mercado ("Time to Market") desplaza la validación de seguridad. Se desactivan protecciones para evitar retrasos en el desarrollo o fricción con el usuario final.</p>
+                            <span class="click-back">Volver</span>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 4 -->
+                    <div class="causa-card" data-cause="4">
+                        <div class="causa-front glassmorphic">
+                            <div class="causa-num">04</div>
+                            <h3>Controles de Acceso Deficientes</h3>
+                            <p>Estructuras de autorización mal planteadas en la raíz del sistema.</p>
+                            <span class="click-details">Haga clic para ver más</span>
+                        </div>
+                        <div class="causa-back glassmorphic">
+                            <h3>Diseño de Autorización</h3>
+                            <p class="desc-detail">La lógica de control de accesos se construye de forma ad-hoc en lugar de usar un sistema centralizado y robusto. Esto facilita la elusión de restricciones mediante manipulación de parámetros directos.</p>
+                            <span class="click-back">Volver</span>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 5 -->
+                    <div class="causa-card" data-cause="5">
+                        <div class="causa-front glassmorphic">
+                            <div class="causa-num">05</div>
+                            <h3>Falta de Validación en Flujos Críticos</h3>
+                            <p>Se asume que los usuarios seguirán el flujo de la aplicación.</p>
+                            <span class="click-details">Haga clic para ver más</span>
+                        </div>
+                        <div class="causa-back glassmorphic">
+                            <h3>Flujos Críticos</h3>
+                            <p class="desc-detail">Se confía en el estado del lado del cliente. Un usuario malicioso puede saltarse pasos intermedios (como el pago o la verificación de identidad) y comunicarse directamente con el endpoint final del servidor.</p>
+                            <span class="click-back">Volver</span>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 6 -->
+                    <div class="causa-card" data-cause="6">
+                        <div class="causa-front glassmorphic">
+                            <div class="causa-num">06</div>
+                            <h3>Arquitectura Insegura</h3>
+                            <p>Exposición indebida de APIs o componentes sin aislamiento.</p>
+                            <span class="click-details">Haga clic para ver más</span>
+                        </div>
+                        <div class="causa-back glassmorphic">
+                            <h3>Arquitectura Defectuosa</h3>
+                            <p class="desc-detail">Los microservicios internos se comunican sin autenticación, o los datos altamente confidenciales se almacenan en zonas accesibles por componentes de presentación sin cifrado ni límites claros.</p>
+                            <span class="click-back">Volver</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. EJEMPLOS REALES (SIMULADOR INTERACTIVO) -->
+        <section id="sec-ejemplos" class="slide-section">
+            <div class="slide-content simulator-layout">
+                <h2 class="section-title"><span class="number-tag">06</span> SIMULADOR DE ESCENARIOS VULNERABLES <span class="title-detail">// CASOS REALES</span></h2>
+                
+                <div class="simulator-container glassmorphic">
+                    <!-- Selector de Escenarios -->
+                    <div class="simulator-sidebar">
+                        <div class="scenario-option active" data-scenario="recovery">
+                            <span class="scen-num">01</span>
+                            <div class="scen-text">
+                                <h4>Recuperación de Contraseña</h4>
+                                <p>Preguntas de seguridad débiles</p>
+                            </div>
+                        </div>
+                        <div class="scenario-option" data-scenario="bypass">
+                            <span class="scen-num">02</span>
+                            <div class="scen-text">
+                                <h4>Bypass de Proceso</h4>
+                                <p>Salto de pasos de compra</p>
+                            </div>
+                        </div>
+                        <div class="scenario-option" data-scenario="limits">
+                            <span class="scen-num">03</span>
+                            <div class="scen-text">
+                                <h4>Transacciones Ilimitadas</h4>
+                                <p>Falta de límites financieros</p>
+                            </div>
+                        </div>
+                        <div class="scenario-option" data-scenario="access">
+                            <span class="scen-num">04</span>
+                            <div class="scen-text">
+                                <h4>Control de Acceso URL</h4>
+                                <p>Falta de validación de rol</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Panel de Simulación Principal -->
+                    <div class="simulator-panel">
+                        <div class="panel-header">
+                            <div class="panel-dots">
+                                <span class="dot-red"></span>
+                                <span class="dot-yellow"></span>
+                                <span class="dot-green"></span>
+                            </div>
+                            <div class="panel-title">EMULADOR DE FLUJO DE ARQUITECTURA</div>
+                            <div class="panel-status">STATUS: READY</div>
+                        </div>
+
+                        <div class="panel-body">
+                            <!-- Simulación Visual en Vivo -->
+                            <div class="visualizer-area">
+                                <div class="app-mockup">
+                                    <div class="mockup-header">
+                                        <span class="mockup-logo">SafeBank Inc.</span>
+                                        <span class="mockup-user" id="mockup-user-display">Invitado</span>
+                                    </div>
+                                    <div class="mockup-content" id="mockup-screen">
+                                        <!-- Dynamic HTML rendered via Javascript based on active scenario -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Terminal de Auditoría Técnica -->
+                            <div class="terminal-area">
+                                <div class="terminal-header">CONSOLE LOGS</div>
+                                <div class="terminal-logs" id="terminal-output">
+                                    <p class="log-info">[SYSTEM] Simulador inicializado con éxito.</p>
+                                    <p class="log-info">[SYSTEM] Seleccione un escenario de la izquierda.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Botones de Control del Simulador -->
+                        <div class="panel-footer">
+                            <button id="btn-simulate-attack" class="sim-btn btn-attack">💥 Simular Ataque</button>
+                            <button id="btn-apply-fix" class="sim-btn btn-fix">🛡️ Aplicar Diseño Seguro</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. CONSECUENCIAS E IMPACTO -->
+        <section id="sec-consecuencias" class="slide-section">
+            <div class="slide-content split-layout">
+                <div class="layout-left">
+                    <h2 class="section-title"><span class="number-tag">07</span> CONSECUENCIAS E IMPACTO</h2>
+                    <div class="impact-text-block">
+                        <p class="highlight-large red-text">Las fallas de diseño tienen consecuencias severas y duraderas.</p>
+                        <p>A diferencia de un bug simple que se parcha con una línea de código, corregir un diseño inseguro suele requerir la <strong>reescritura completa del sistema</strong> o cambios profundos en las bases de datos y APIs.</p>
+                        <ul class="impact-bullets">
+                            <li><strong class="highlight-red-sub">Fraude Financiero Directo:</strong> Los abusos de lógica permiten transacciones sin fondos o desvíos de dinero.</li>
+                            <li><strong class="highlight-red-sub">Daño Reputacional Crítico:</strong> Pérdida de la confianza de clientes y socios comerciales ante fallos evitables.</li>
+                            <li><strong class="highlight-red-sub">Sanciones Legales:</strong> Multas severas por violaciones de normativas de protección de datos (PCI-DSS, GDPR).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="layout-right central-flex">
+                    <div class="chart-widget-box glassmorphic">
+                        <h3>Métricas de Impacto de A06</h3>
+                        <p class="helper-text">Gravedad e impacto comparativo de corregir fallas de diseño en el tiempo:</p>
+                        
+                        <div class="custom-chart">
+                            <!-- Barra 1 -->
+                            <div class="chart-bar-group">
+                                <div class="bar-label">Costo de Corrección (Fase Diseño)</div>
+                                <div class="bar-track">
+                                    <div class="bar-fill fill-green" style="width: 10%"></div>
+                                </div>
+                                <div class="bar-value">1x</div>
+                            </div>
+                            <!-- Barra 2 -->
+                            <div class="chart-bar-group">
+                                <div class="bar-label">Costo de Corrección (Fase Codificación)</div>
+                                <div class="bar-track">
+                                    <div class="bar-fill fill-yellow" style="width: 35%"></div>
+                                </div>
+                                <div class="bar-value">5x</div>
+                            </div>
+                            <!-- Barra 3 -->
+                            <div class="chart-bar-group">
+                                <div class="bar-label">Costo de Corrección (Fase Producción)</div>
+                                <div class="bar-track">
+                                    <div class="bar-fill fill-red" style="width: 100%"></div>
+                                </div>
+                                <div class="bar-value">100x</div>
+                            </div>
+                        </div>
+                        <div class="chart-legend">
+                            <span class="legend-item"><span class="leg-color col-green"></span> Bajo</span>
+                            <span class="legend-item"><span class="leg-color col-yellow"></span> Moderado</span>
+                            <span class="legend-item"><span class="leg-color col-red"></span> Extremo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. CÓMO IDENTIFICAR UN DISEÑO INSEGURO -->
+        <section id="sec-identificar" class="slide-section">
+            <div class="slide-content vertical-layout">
+                <h2 class="section-title"><span class="number-tag">08</span> CÓMO IDENTIFICAR <span class="title-detail">// AUDITORÍA Y ANÁLISIS</span></h2>
+                
+                <div class="matrix-container glassmorphic">
+                    <div class="matrix-selector">
+                        <h3>Tácticas de Evaluación de Diseño</h3>
+                        <p class="helper-text">Selecciona una táctica para auditar la arquitectura:</p>
+                        <div class="matrix-buttons">
+                            <button class="matrix-btn active" data-tactic="threat">Modelado de Amenazas</button>
+                            <button class="matrix-btn" data-tactic="architecture">Revisión de Arquitectura</button>
+                            <button class="matrix-btn" data-tactic="risk">Análisis de Riesgos</button>
+                            <button class="matrix-btn" data-tactic="flow">Revisión de Procesos de Negocio</button>
+                        </div>
+                    </div>
+
+                    <div class="matrix-details" id="matrix-display-panel">
+                        <div class="matrix-detail-card">
+                            <div class="detail-icon-box">🛡️</div>
+                            <h3 id="tactic-title">Modelado de Amenazas</h3>
+                            
+                            <div class="detail-section-row">
+                                <div class="detail-col">
+                                    <h4>OBJETIVO</h4>
+                                    <p id="tactic-objective">Identificar posibles ataques y fallas arquitectónicas antes de escribir código.</p>
+                                </div>
+                                <div class="detail-col">
+                                    <h4>¿QUÉ SE EVALÚA?</h4>
+                                    <p id="tactic-eval">Activos del sistema, límites de confianza, flujos de datos y amenazas potenciales (STRIDE).</p>
+                                </div>
+                            </div>
+
+                            <div class="detail-result-row">
+                                <h4>RESULTADO ESPERADO</h4>
+                                <p id="tactic-result" class="result-text-highlight">Conocer los riesgos potenciales del software y diseñar mitigaciones efectivas antes del desarrollo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. MEDIDAS DE PREVENCIÓN Y BUENAS PRÁCTICAS -->
+        <section id="sec-medidas" class="slide-section">
+            <div class="slide-content vertical-layout">
+                <h2 class="section-title"><span class="number-tag">09</span> MEDIDAS DE PREVENCIÓN <span class="title-detail">// BUENAS PRÁCTICAS</span></h2>
+                
+                <div class="medidas-grid">
+                    <!-- Medida 1 -->
+                    <div class="medida-item glassmorphic">
+                        <div class="medida-header">
+                            <span class="medida-icon">🎨</span>
+                            <h3>1. Seguridad por Diseño (SBD)</h3>
+                        </div>
+                        <p>Incorporar expertos en seguridad y requisitos de seguridad desde la fase inicial de definición del proyecto.</p>
+                    </div>
+
+                    <!-- Medida 2 -->
+                    <div class="medida-item glassmorphic">
+                        <div class="medida-header">
+                            <span class="medida-icon">🔑</span>
+                            <h3>2. Mínimo Privilegio</h3>
+                            <div class="badge badge-tech">Principio</div>
+                        </div>
+                        <p>Diseñar los accesos para que las cuentas de usuario y servicios internos solo tengan los permisos estrictamente necesarios.</p>
+                    </div>
+
+                    <!-- Medida 3 -->
+                    <div class="medida-item glassmorphic">
+                        <div class="medida-header">
+                            <span class="medida-icon">🗺️</span>
+                            <h3>3. Modelado de Amenazas Continuo</h3>
+                        </div>
+                        <p>Ejecutar análisis de amenazas sistemáticos para todos los flujos de negocio críticos antes de su desarrollo.</p>
+                    </div>
+
+                    <!-- Medida 4 -->
+                    <div class="medida-item glassmorphic">
+                        <div class="medida-header">
+                            <span class="medida-icon">🧅</span>
+                            <h3>4. Defensa en Profundidad</h3>
+                        </div>
+                        <p>Implementar múltiples capas de control alrededor de los activos críticos en lugar de confiar en una sola barrera perimetral.</p>
+                    </div>
+
+                    <!-- Medida 5 -->
+                    <div class="medida-item glassmorphic">
+                        <div class="medida-header">
+                            <span class="medida-icon">✅</span>
+                            <h3>5. Validar en Servidor</h3>
+                            <div class="badge badge-alert">Urgente</div>
+                        </div>
+                        <p>No delegar validaciones ni control de estado crítico al navegador o cliente. Toda regla de negocio se valida en el servidor.</p>
+                    </div>
+
+                    <!-- Medida 6 -->
+                    <div class="medida-item glassmorphic">
+                        <div class="medida-header">
+                            <span class="medida-icon">📐</span>
+                            <h3>6. Auditorías de Arquitectura</h3>
+                        </div>
+                        <p>Realizar revisiones periódicas de los patrones de diseño del software para garantizar que se adaptan a las nuevas amenazas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. GRACIAS / CIERRE -->
+        <section id="sec-gracias" class="slide-section">
+            <div class="slide-content central-layout">
+                <div class="cierre-box glassmorphic">
+                    <div class="cierre-status">SESSION SECURED: COMPLETED</div>
+                    <h2 class="cierre-title">GRACIAS POR SU ATENCIÓN</h2>
+                    <p class="cierre-desc">¿Preguntas o comentarios sobre OWASP A06:2025?</p>
+                    <div class="glow-separator"></div>
+                    <div class="cierre-actions">
+                        <button class="cierre-btn" onclick="document.getElementById('sec-portada').scrollIntoView({behavior: 'smooth'})">
+                            🔄 Reiniciar Presentación
+                        </button>
+                        <a href="https://owasp.org/Top10/es/A06_2021-Insecure_Design/" target="_blank" class="cierre-link">
+                            📚 Documentación de OWASP
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer static controls -->
+    <footer class="cyber-footer">
+        <div class="footer-left">
+            <span>UNIVERSIDAD NACIONAL TRUJILLO</span>
+            <span class="footer-dot">•</span>
+            <span>CALIDAD DE SOFTWARE</span>
+        </div>
+        <div class="footer-right">
+            <span>DIAPOSITIVA ACTIVA: <strong id="current-slide-num">01</strong>/11</span>
+        </div>
+    </footer>
+
+    <!-- Script file -->
+    <script src="app.js"></script>
+</body>
+</html>
