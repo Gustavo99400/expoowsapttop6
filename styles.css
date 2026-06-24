@@ -2202,5 +2202,10 @@ body.light-mode .theme-toggle-btn {
     color: var(--color-accent-cyan);
 }
 
+body.light-mode .causa-num {
+    color: rgba(15, 23, 42, 0.25) !important;
+}
+
+
 
 
