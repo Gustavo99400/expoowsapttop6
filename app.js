@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCausesFlipping();
     initScenarioSimulator();
     initMatrixSelector();
+    initThemeToggle();
 });
 
 /* ==========================================================================
@@ -612,5 +613,38 @@ function initMatrixSelector() {
                 }, 150);
             }
         });
+    });
+}
+
+/* ==========================================================================
+   9. CONTROLADOR DE CAMBIO DE TEMA (CLARO / OSCURO)
+   ========================================================================== */
+function initThemeToggle() {
+    const toggleBtn = document.getElementById('theme-toggle-btn');
+    const sunIcon = document.querySelector('.theme-icon-sun');
+    const moonIcon = document.querySelector('.theme-icon-moon');
+    
+    if (!toggleBtn) return;
+    
+    // Buscar configuración previa
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-mode');
+        if (sunIcon) sunIcon.style.display = 'none';
+        if (moonIcon) moonIcon.style.display = 'inline-block';
+    }
+    
+    toggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+        
+        if (document.body.classList.contains('light-mode')) {
+            localStorage.setItem('theme', 'light');
+            if (sunIcon) sunIcon.style.display = 'none';
+            if (moonIcon) moonIcon.style.display = 'inline-block';
+        } else {
+            localStorage.setItem('theme', 'dark');
+            if (sunIcon) sunIcon.style.display = 'inline-block';
+            if (moonIcon) moonIcon.style.display = 'none';
+        }
     });
 }

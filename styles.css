@@ -9,6 +9,7 @@
     --color-bg-panel-solid: #0d1426;
     --color-text-main: #e2e8f0;
     --color-text-muted: #94a3b8;
+    --color-text-title: #ffffff;
     
     /* Acentos Neón */
     --color-accent-cyan: #00e5ff;
@@ -2021,5 +2022,164 @@ body {
     position: relative;
     top: -1px;
 }
+
+/* ==========================================================================
+   ESTILOS DE TEMA CLARO (PROYECTORES / ALTO CONTRASTE)
+   ========================================================================== */
+
+body.light-mode {
+    --color-bg-dark: #f8fafc;
+    --color-bg-panel: rgba(255, 255, 255, 0.85);
+    --color-bg-panel-solid: #ffffff;
+    --color-text-main: #1e293b;
+    --color-text-muted: #475569;
+    --color-text-title: #0f172a;
+    
+    --color-accent-cyan: #0284c7;
+    --color-accent-cyan-glow: rgba(2, 132, 199, 0.15);
+    --color-accent-red: #dc2626;
+    --color-accent-red-glow: rgba(220, 38, 38, 0.15);
+    --color-accent-green: #15803d;
+    --color-accent-green-glow: rgba(21, 128, 61, 0.15);
+    
+    --border-glass: 1px solid rgba(2, 132, 199, 0.2);
+    --border-glass-red: 1px solid rgba(220, 38, 38, 0.2);
+    --border-glass-green: 1px solid rgba(21, 128, 61, 0.2);
+    
+    --shadow-neon-cyan: 0 4px 15px rgba(2, 132, 199, 0.1);
+    --shadow-neon-red: 0 4px 15px rgba(220, 38, 38, 0.1);
+    --shadow-neon-green: 0 4px 15px rgba(21, 128, 61, 0.1);
+}
+
+/* Forzar color de títulos y textos clave en tema claro */
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3,
+body.light-mode h4,
+body.light-mode .section-title,
+body.light-mode .alumno-name,
+body.light-mode .node-content h3,
+body.light-mode .slider-display-card h4,
+body.light-mode .causa-front h3,
+body.light-mode .causa-back h3,
+body.light-mode .matrix-selector h3,
+body.light-mode .matrix-detail-card h3,
+body.light-mode .cierre-title,
+body.light-mode .cierre-link,
+body.light-mode .highlight-large {
+    color: var(--color-text-title) !important;
+}
+
+body.light-mode .header-project-name {
+    background: linear-gradient(135deg, #0f172a, var(--color-accent-cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body.light-mode .alumno-card {
+    background: rgba(255, 255, 255, 0.6);
+    border-color: rgba(2, 132, 199, 0.1);
+}
+body.light-mode .alumno-card:hover {
+    background: #ffffff;
+    border-color: var(--color-accent-cyan);
+}
+body.light-mode .agenda-node {
+    background: rgba(255, 255, 255, 0.7);
+}
+body.light-mode .agenda-node:hover {
+    background: #ffffff;
+}
+body.light-mode .agenda-node h3 {
+    color: #0f172a !important;
+}
+body.light-mode .slider-display-card {
+    background: rgba(255, 255, 255, 0.7);
+}
+body.light-mode .flow-path {
+    background: rgba(255, 255, 255, 0.7);
+}
+body.light-mode .causa-back {
+    background: #ffffff;
+}
+body.light-mode .matrix-btn {
+    background: rgba(255, 255, 255, 0.6);
+}
+body.light-mode .matrix-btn.active {
+    background: rgba(2, 132, 199, 0.1);
+}
+body.light-mode .matrix-details {
+    background: rgba(255, 255, 255, 0.75);
+}
+body.light-mode .simulator-sidebar {
+    background: rgba(241, 245, 249, 0.6);
+}
+body.light-mode .scenario-option.active {
+    background: rgba(2, 132, 199, 0.1);
+}
+body.light-mode .simulator-panel {
+    background: #ffffff;
+}
+body.light-mode .panel-header {
+    background: #f1f5f9;
+}
+body.light-mode .panel-footer {
+    background: #f1f5f9;
+}
+body.light-mode .app-mockup {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+}
+body.light-mode .mockup-header {
+    background: #e2e8f0;
+}
+body.light-mode .mockup-title {
+    color: #0f172a !important;
+}
+body.light-mode .mockup-input {
+    background: #ffffff;
+    border-color: #cbd5e1;
+    color: #0f172a;
+}
+body.light-mode .visualizer-area {
+    background: rgba(241, 245, 249, 0.4);
+}
+body.light-mode .cyber-header {
+    background: rgba(248, 250, 252, 0.85);
+}
+body.light-mode .cyber-footer {
+    background: rgba(248, 250, 252, 0.85);
+}
+body.light-mode .cyber-grid {
+    background-image: 
+        linear-gradient(rgba(2, 132, 199, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(2, 132, 199, 0.05) 1px, transparent 1px);
+}
+body.light-mode .cyber-grid::after {
+    background: radial-gradient(circle at 50% 50%, transparent 40%, var(--color-bg-dark) 95%);
+}
+
+.theme-toggle-btn {
+    background: rgba(0, 229, 255, 0.1);
+    border: 1px solid rgba(0, 229, 255, 0.2);
+    color: var(--color-accent-cyan);
+    padding: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.theme-toggle-btn:hover {
+    background: rgba(0, 229, 255, 0.2);
+    box-shadow: 0 0 10px var(--color-accent-cyan-glow);
+}
+body.light-mode .theme-toggle-btn {
+    background: rgba(2, 132, 199, 0.1);
+    border-color: rgba(2, 132, 199, 0.2);
+    color: var(--color-accent-cyan);
+}
+
 
 
