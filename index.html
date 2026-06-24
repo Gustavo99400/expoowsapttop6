@@ -715,6 +715,47 @@
                             <svg class="btn-svg-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle; margin-right:5px;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
                             Documentación de OWASP
                         </a>
+                        <button id="toggle-examples-btn" class="cierre-btn-danger">
+                            <svg class="btn-svg-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle; margin-right:5px;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                            Ejemplos en Vivo
+                        </button>
+                    </div>
+
+                    <!-- Contenedor desplegable de ejemplos de diseño inseguro -->
+                    <div class="insecure-examples-container" id="insecure-examples" style="display: none;">
+                        <div class="examples-header">
+                            <span class="warning-pulse-dot"></span>
+                            <h3>SISTEMAS EXPUESTOS CON DISEÑO INSEGURO</h3>
+                        </div>
+                        <p class="examples-desc">
+                            Estos servidores y servicios web reales están accesibles sin autenticación robusta o mediante configuraciones inseguras de fábrica (ejemplos prácticos de fallas de diseño/arquitectura):
+                        </p>
+                        <div class="examples-grid">
+                            <a href="http://184.57.102.6:9090/" target="_blank" class="example-link-card">
+                                <span class="link-ip">184.57.102.6:9090</span>
+                                <span class="link-label">Dispositivo Expuesto (Panel)</span>
+                            </a>
+                            <a href="http://184.57.102.6:9550/" target="_blank" class="example-link-card">
+                                <span class="link-ip">184.57.102.6:9550</span>
+                                <span class="link-label">Dispositivo Expuesto (Interfaz)</span>
+                            </a>
+                            <a href="http://72.199.200.5:8080/" target="_blank" class="example-link-card">
+                                <span class="link-ip">72.199.200.5:8080</span>
+                                <span class="link-label">Servicio Web Activo</span>
+                            </a>
+                            <a href="http://139.64.168.120:8080/" target="_blank" class="example-link-card">
+                                <span class="link-ip">139.64.168.120:8080</span>
+                                <span class="link-label">Sistema no Asegurado</span>
+                            </a>
+                            <a href="http://104.8.233.169:8081/gallery.html" target="_blank" class="example-link-card">
+                                <span class="link-ip">104.8.233.169:8081</span>
+                                <span class="link-label">Galería de Archivos Abierta</span>
+                            </a>
+                            <a href="http://73.235.161.152:81/" target="_blank" class="example-link-card">
+                                <span class="link-ip">73.235.161.152:81</span>
+                                <span class="link-label">Servidor Expuesto (HTTP:81)</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScenarioSimulator();
     initMatrixSelector();
     initThemeToggle();
+    initInsecureExamplesToggle();
 });
 
 /* ==========================================================================
@@ -645,6 +646,37 @@ function initThemeToggle() {
             localStorage.setItem('theme', 'dark');
             if (sunIcon) sunIcon.style.display = 'inline-block';
             if (moonIcon) moonIcon.style.display = 'none';
+        }
+    });
+}
+
+/* ==========================================================================
+   10. DESPLEGAR EJEMPLOS DE DISEÑO INSEGURO
+   ========================================================================== */
+function initInsecureExamplesToggle() {
+    const toggleBtn = document.getElementById('toggle-examples-btn');
+    const container = document.getElementById('insecure-examples');
+    
+    if (!toggleBtn || !container) return;
+    
+    toggleBtn.addEventListener('click', () => {
+        const isHidden = container.style.display === 'none';
+        if (isHidden) {
+            container.style.display = 'block';
+            toggleBtn.innerHTML = `
+                <svg class="btn-svg-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle; margin-right:5px;"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+                Ocultar Ejemplos
+            `;
+            // Scroll suave para revelar los ejemplos
+            setTimeout(() => {
+                container.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
+        } else {
+            container.style.display = 'none';
+            toggleBtn.innerHTML = `
+                <svg class="btn-svg-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle; margin-right:5px;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                Ejemplos en Vivo
+            `;
         }
     });
 }
